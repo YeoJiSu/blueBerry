@@ -1,11 +1,14 @@
 import Layout from "components/Layout";
+import { ServiceSS } from "./service.style";
 import React from "react";
 
 const ContactPage = (): JSX.Element => {
   return (
     <Layout>
-      <main>
-        <div>문의</div>
+      <ServiceSS>
+        <span>
+          <div>문의</div>
+        </span>
         <div>
           문의 글을 보내주시면 운영시간 내에 고객님의 이메일로 답변드리도록
           하겠습니다.
@@ -24,7 +27,7 @@ const ContactPage = (): JSX.Element => {
           블루베리 본사 : 서울특별시 마포구 어울마당로5길 41 / 전화번호 1600.
           2126
         </div>
-      </main>
+      </ServiceSS>
     </Layout>
   );
 };
