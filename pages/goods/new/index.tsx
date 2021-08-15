@@ -1,12 +1,13 @@
 import Layout from "components/Layout";
 import React from "react";
+import { GoodsSS } from "../goods.style";
 
 const NewPage = (): JSX.Element => {
   return (
     <Layout>
-      <main>
+      <GoodsSS>
         <span>새상품 페이지 </span>
-      </main>
+      </GoodsSS>
     </Layout>
   );
 };

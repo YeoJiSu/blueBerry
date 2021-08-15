@@ -1,12 +1,15 @@
 import Layout from "components/Layout";
 import React from "react";
+import { GoodsSS } from "../goods.style";
 
 const BestPage = (): JSX.Element => {
   return (
     <Layout>
-      <main>
-        <span>베스트 페이지 </span>
-      </main>
+      <GoodsSS>
+        <span>
+          <div>베스트 페이지 </div>
+        </span>
+      </GoodsSS>
     </Layout>
   );
 };
