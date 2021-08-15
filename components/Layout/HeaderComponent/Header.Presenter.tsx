@@ -54,7 +54,7 @@ const HeaderPresenter = ({
                 </Link>
               </li>
               <li>
-                <Link href="/help/abouts">
+                <Link href="/place">
                   <a>매장보기</a>
                 </Link>
               </li>

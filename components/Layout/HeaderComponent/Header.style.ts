@@ -20,6 +20,9 @@ export const HeaderSS = styled.div<{ isLoggedIn: boolean }>`
       width: 200px;
       padding-top: 5px;
     }
+    img:hover {
+      cursor: pointer;
+    }
   }
   .description {
     display: none;
@@ -52,6 +55,9 @@ export const HeaderSS = styled.div<{ isLoggedIn: boolean }>`
         isLoggedIn ? "#3e0f5a" : "black"};
       color: white;
     }
+    span:hover {
+      cursor: pointer;
+    }
   }
 
   .pages {
@@ -70,6 +76,9 @@ export const HeaderSS = styled.div<{ isLoggedIn: boolean }>`
       font-weight: 500;
       position: relative;
       line-height: 42px;
+    }
+    ul li a:hover {
+      cursor: pointer;
     }
     ul li a:hover:after {
       opacity: 1;
