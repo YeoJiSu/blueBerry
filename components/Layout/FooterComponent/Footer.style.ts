@@ -35,6 +35,7 @@ export const FooterSS = styled.div`
     a p:hover {
       color: purple;
       cursor: pointer;
+      font-weight: 900;
     }
     img {
       margin-right: 15px;
@@ -42,6 +43,7 @@ export const FooterSS = styled.div`
     img:hover {
       background-color: #4200529e;
       border-radius: 50%;
+
       cursor: pointer;
     }
   }
@@ -70,7 +72,6 @@ export const FooterSS = styled.div`
   }
   .footer-bottom {
     //float: center;
-    height: 100px;
     z-index: 1;
     position: fixed;
     left: 0;
@@ -78,7 +79,7 @@ export const FooterSS = styled.div`
     bottom: 0;
     background-color: white;
     box-shadow: 0 0.0875rem 0.375rem rgb(0 0 0 / 30%);
-    height: 50px;
+    height: 60px;
     text-align: center;
     ul {
       display: flex;
@@ -132,7 +133,8 @@ export const FooterSS = styled.div`
       left: -9px;
       top: 14px;
     }
-    ul li a img {
+    ul li a img:hover {
+      cursor: pointer;
     }
   }
 `;

@@ -42,12 +42,12 @@ const FooterPresenter = (): JSX.Element => {
           </div>
           <div className={"privacy"}>
             <p>법적고지</p>
-            <Link href="/Law/terms">
+            <Link href="/service/terms">
               <a>
                 <p>이용약관</p>
               </a>
             </Link>
-            <Link href="/Law/privacy">
+            <Link href="/service/privacy">
               <a>
                 <p>개인정보 처리방침</p>
               </a>
