@@ -6,9 +6,7 @@ const BestPage = (): JSX.Element => {
   return (
     <Layout>
       <GoodsSS>
-        <span>
-          <div>베스트 페이지 </div>
-        </span>
+        <div className={"title"}>BEST</div>
       </GoodsSS>
     </Layout>
   );
