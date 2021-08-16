@@ -9,6 +9,7 @@ import {
   Arrow,
   Picker,
 } from "./Body.style";
+import GlassPage from "../goods/glass/glass";
 //import { images } from "public/Images";
 
 const ascending = (a, b) => {
@@ -155,28 +156,8 @@ const BodyPresenter = (): JSX.Element => {
           </Arrow>
           <PickerWrapper>{pickers}</PickerWrapper>
         </Container>
-
-        <div className="aboutUs1">
-          {/* map으로 반복문 돌리는 걸로 수정하기  */}
-          <div className="box">
-            <hr />
-            <span className="title">Love Horse</span>
-            <span className="content">애애</span>
-          </div>
-          <div className="box">
-            <hr />
-            <span className="title">Love Horse</span>
-          </div>
-          <div className="box">
-            <hr />
-            <span className="title">Love Horse</span>
-          </div>
-          <div className="box">
-            <hr />
-            <span className="title">Love Horse</span>
-          </div>
-        </div>
       </BodySS>
+      <GlassPage />
     </>
   );
 };
