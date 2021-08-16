@@ -13,6 +13,10 @@ export const PlaceSS = styled.div`
     a:hover {
       cursor: pointer;
     }
+    a img:hover {
+      background-color: #4200529e;
+      border-radius: 50%;
+    }
   }
   div {
     font-size: 14px;
