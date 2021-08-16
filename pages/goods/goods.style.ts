@@ -1,22 +1,41 @@
 import styled from "styled-components";
 //import { theme } from "@/styles/theme";
-
+//display: flex; 만 하면 옆으로 넘기는 거 가능
 export const GoodsSS = styled.div`
-  margin-left: 10%;
-  margin-top: 200px;
-  margin-bottom: 100px;
+  //min-width: 1200px;
+  width: 100%;
+  min-width: 1530px;
 
-  span div {
-    font-size: 17px;
-    font-weight: 900;
-    margin-bottom: 50px;
+  .title {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 80px;
+    margin-top: 300px;
   }
-  div {
-    font-size: 14px;
-    margin-bottom: 50px;
-    line-height: 30px;
-  }
-  div span {
-    margin-left: 10px;
+
+  .goods {
+    margin-left: 5%;
+    //margin-right: 20px;
+    align-items: center;
+    //width: 100%;
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    //margin-left: 5%;
+    //position: absolute;
+    //margin-left: 10%;
+    //margin-top: 200px;
+    //margin-bottom: 100px;
+
+    //width: 1360px;
+    .goods_img {
+      margin: 20px;
+      img {
+        width: 300px;
+      }
+    }
   }
 `;
