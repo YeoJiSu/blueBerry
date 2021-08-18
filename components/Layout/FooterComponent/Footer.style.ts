@@ -2,13 +2,13 @@ import styled from "styled-components";
 //import { theme } from "@/styles/theme";
 
 export const FooterSS = styled.div`
-  min-width: 1100px;
+  min-width: 948px;
   bottom: 0;
   color: white;
 
   left: 0;
   right: 0;
-  width: 100%;
+
   .footer-top {
     color: black;
 
@@ -16,14 +16,12 @@ export const FooterSS = styled.div`
     right: 0;
     bottom: 0;
     display: flex;
-    float: right;
-    width: 90%;
-    //padding-left: 20px;
-    div {
-      width: 30%;
-      text-align: left;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 150px;
     p {
+      margin-right: 100px;
+      margin-left: 100px;
       font-size: 16px;
       font-weight: 700;
     }
@@ -37,13 +35,10 @@ export const FooterSS = styled.div`
       cursor: pointer;
       font-weight: 900;
     }
-    img {
-      margin-right: 15px;
-    }
+
     img:hover {
       background-color: #4200529e;
       border-radius: 50%;
-
       cursor: pointer;
     }
   }
@@ -51,23 +46,21 @@ export const FooterSS = styled.div`
     margin-top: 20px;
     margin-bottom: 80px;
     display: flex;
-    float: right;
+    flex-wrap: wrap;
+    justify-content: center;
     color: black;
 
-    //margin: 30px;
-    width: 90%;
     span:nth-child(1) {
       //padding: 30px;
       font-weight: 900;
-
-      width: 30%;
-      //text-align: right;
-      //padding-right: 150px;
+      margin-right: 100px;
+      margin-left: 100px;
     }
     span:nth-child(2) {
       //padding: 30px;
       font-size: 13px;
-      margin-right: 10px;
+      margin-right: 100px;
+      margin-left: 100px;
     }
   }
   .footer-bottom {

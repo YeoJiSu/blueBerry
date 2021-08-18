@@ -55,22 +55,23 @@ const FooterPresenter = (): JSX.Element => {
           </div>
           <div className={"look"}>
             <p>블루베리를 만나보세요</p>
-
-            <Link href="https://www.instagram.com/blueberry0999/">
-              <a>
-                <img src="/instagram.png" width="25px" alt="" />
-              </a>
-            </Link>
-            <Link href="https://www.facebook.com/bbglasses/">
-              <a>
-                <img src="/facebook.png" width="25px" alt="" />
-              </a>
-            </Link>
-            <Link href="https://twitter.com/bbeglasses">
-              <a>
-                <img src="/twitter.png" width="25px" alt="" />
-              </a>
-            </Link>
+            <p>
+              <Link href="https://www.instagram.com/blueberry0999/">
+                <a>
+                  <img src="/instagram.png" width="25px" alt="" />
+                </a>
+              </Link>
+              <Link href="https://www.facebook.com/bbglasses/">
+                <a>
+                  <img src="/facebook.png" width="25px" alt="" />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/bbeglasses">
+                <a>
+                  <img src="/twitter.png" width="25px" alt="" />
+                </a>
+              </Link>
+            </p>
           </div>
         </div>
 
