@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const Container = styled.div`
   height: 700px;
-  min-width: 1200px;
+  //min-width: 1530px;
   width: 100%; //추가
   margin-top: 30px;
 
@@ -20,6 +20,7 @@ export const FillImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   @media screen and (max-width: 485px) {
     height: 1200px;
     width: 100%; //추가
@@ -27,12 +28,13 @@ export const FillImage = styled.img`
 `;
 
 export const PickerWrapper = styled.div`
-  //position: center;
-  //bottom: 10px;
-  //transform: translate(-50%);
-  margin-left: 50%;
+  //margin-left: 45%;
+
   margin-top: -40px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media screen and (max-width: 485px) {
     display: none;
   }
