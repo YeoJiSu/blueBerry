@@ -1,8 +1,11 @@
 import React, { ReactChild, useCallback, useEffect, useState } from "react";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { GoodsSS } from "../goods.style";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const GlassPage = (): JSX.Element => {
+  const router = useRouter();
   const [glass, glassList] = useState([]);
   const menu = [
     ["모두"],
@@ -57,7 +60,7 @@ const GlassPage = (): JSX.Element => {
     ["10만원대", "20만원대", "30만원대", "40만원대", "50만원대"],
   ];
   const menus = [[], [], [], [], [], [], [], []];
-  const All = (name: string) => {
+  const All = (name: any) => {
     var value;
     axios.get("https://strapi.kspark.link/glasses").then((res) => {
       //모두
@@ -65,13 +68,13 @@ const GlassPage = (): JSX.Element => {
       if (name === "all") value = all;
       //커스텀에 따라
       const custom = all.filter((fil) => {
-        if (fil.custom === true) {
+        if (fil.IsCustom === "custom") {
           return true;
         }
       });
       if (name === "custom") value = custom;
       const noncustom = all.filter((fil) => {
-        if (fil.custom !== true) {
+        if (fil.IsCustom !== "custom") {
           return true;
         }
       });
@@ -134,7 +137,7 @@ const GlassPage = (): JSX.Element => {
       glassList(value);
     });
   };
-  //const show = () => {};
+
   return (
     <GoodsSS>
       <span>
@@ -213,16 +216,26 @@ const GlassPage = (): JSX.Element => {
 
       <span>
         <div className={"goods"}>
-          {glass.map((value, index) => {
+          {glass.map((value) => {
             return (
               <>
                 <div className={"goods_img"}>
                   <img
-                    src={glass[index]?.img_url}
-                    alt={glass[index]?.goodsName}
+                    src={value?.img_url}
+                    alt={value?.goodsName}
+                    onClick={() => {
+                      router.push({
+                        pathname: "/goods/one/value",
+                        query: value,
+                      });
+                    }}
                   />
-                  <p>{glass[index]?.goodsName}</p>
-                  <p>{glass[index]?.price}원</p>
+                  <div>
+                    <p>커스텀이니? {value?.IsCustom}</p>
+                    <p>{value?.goodsName}</p>
+                    <p>{value?.price}원</p>
+                    <p>{value?.IsSoldout}</p>
+                  </div>
                 </div>
               </>
             );
