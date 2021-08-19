@@ -231,7 +231,7 @@ const GlassPage = (): JSX.Element => {
                     }}
                   />
                   <div>
-                    <p>커스텀이니? {value?.IsCustom}</p>
+                    <p>{value?.IsCustom}</p>
                     <p>{value?.goodsName}</p>
                     <p>{value?.price}원</p>
                     <p>{value?.IsSoldout}</p>
