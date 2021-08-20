@@ -10,6 +10,8 @@ export const FooterSS = styled.div`
   right: 0;
 
   .footer-top {
+    padding-top: 15px;
+    background-color: rgb(0 0 0 / 5%);
     color: black;
 
     left: 0;
@@ -43,8 +45,9 @@ export const FooterSS = styled.div`
     }
   }
   .footer-middle {
-    margin-top: 20px;
-    margin-bottom: 80px;
+    background-color: rgb(0 0 0 / 5%);
+    padding-top: 20px;
+    padding-bottom: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -65,6 +68,7 @@ export const FooterSS = styled.div`
   }
   .footer-bottom {
     //float: center;
+
     z-index: 1;
     position: fixed;
     left: 0;

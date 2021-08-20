@@ -113,6 +113,7 @@ const FooterPresenter = (): JSX.Element => {
               <Link href="/">
                 <a>
                   <img src="/heart.png" width="25px" alt="" />
+                  <span>2</span>
                 </a>
               </Link>
             </li>
