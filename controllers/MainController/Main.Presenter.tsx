@@ -9,7 +9,7 @@ import {
   Arrow,
   Picker,
 } from "./Main.Style";
-import GlassPage from "@/pages/goods/glass/glass";
+import BestPage from "@/pages/goods/best/best";
 //import { images } from "public/Images";
 
 const ascending = (a, b) => {
@@ -157,7 +157,7 @@ const MainPresenter = (): JSX.Element => {
           <PickerWrapper>{pickers}</PickerWrapper>
         </Container>
       </BodySS>
-      <GlassPage />
+      <BestPage />
     </>
   );
 };
