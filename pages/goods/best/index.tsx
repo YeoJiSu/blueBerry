@@ -1,15 +1,13 @@
 import Layout from "components/Layout";
 import React from "react";
-import { GoodsSS } from "../goods.style";
+import BestPage from "./best";
 
-const BestPage = (): JSX.Element => {
+const BestComponentPage = (): JSX.Element => {
   return (
     <Layout>
-      <GoodsSS>
-        <div className={"title"}>BEST</div>
-      </GoodsSS>
+      <BestPage />
     </Layout>
   );
 };
 
-export default BestPage;
+export default BestComponentPage;

@@ -2,80 +2,108 @@ import Layout from "components/Layout";
 import React, { useCallback, useEffect, useState } from "react";
 import { GoodsSS } from "../goods.style";
 import axios, { AxiosResponse } from "axios";
+import { useRouter } from "next/router";
 
 const NewPage = (): JSX.Element => {
-  const [glass, glassList] = useState([]);
+  const router = useRouter();
+  const [glassBest, glassBestList] = useState([]);
+  const [sunglassBest, sunglassBestList] = useState([]);
   useEffect(() => {
-    axios
-      .get("https://strapi.kspark.link/glasses")
-      .then((response: AxiosResponse) => {
-        const glassNew = response.data
-          .filter((value) => {
-            if (value.New === true) {
-              return true;
-            }
-          })
-          .map((value) => {
-            return value;
-          });
-        //console.log("glassNew", glassNew);
-        glassList(glassNew);
-      });
-  }, []);
-  const [sunglass, sunglassList] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://strapi.kspark.link/sunglasses")
-      .then((response: AxiosResponse) => {
-        const sunglassNew = response.data
-          .filter((value) => {
-            if (value.New === true) {
-              return true;
-            }
-          })
-          .map((value) => {
-            return value;
-          });
-        //console.log("glassNew", glassNew);
-        sunglassList(sunglassNew);
-      });
-  }, []);
+    axios.get("https://strapi.kspark.link/glasses").then((res) => {
+      const glass = res.data;
 
+      const best = glass.filter((value) => {
+        if (value.new === true) {
+          return true;
+        }
+      });
+      glassBestList(best);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get("https://strapi.kspark.link/sunglasses").then((res) => {
+      const sunglass = res.data;
+
+      const best = sunglass.filter((value) => {
+        if (value.New === true) {
+          return true;
+        }
+      });
+      sunglassBestList(best);
+    });
+  }, []);
   return (
     <Layout>
       <GoodsSS>
-        <div className={"title"}>NEW</div>
-        <div className={"goods"}>
-          {glass.map((value, index) => {
-            return (
-              <>
-                <div className={"goods_img"}>
-                  <img
-                    src={glass[index]?.img_url}
-                    alt={glass[index]?.goodsName}
-                  />
-                  <p>{glass[index]?.goodsName}</p>
-                  <p>{glass[index]?.price}원</p>
-                </div>
-              </>
-            );
-          })}
-
-          {sunglass.map((value, index) => {
-            return (
-              <>
-                <div className={"goods_img"}>
-                  <img
-                    src={sunglass[index]?.img_url}
-                    alt={sunglass[index]?.goodsName}
-                  />
-                  <p>{sunglass[index]?.goodsName}</p>
-                  <p>{sunglass[index]?.price}원</p>
-                </div>
-              </>
-            );
-          })}
-        </div>
+        <span>
+          <div className={"title"}>NEW</div>
+        </span>
+        <span>
+          <div className={"goods"}>
+            {glassBest.map((value) => {
+              return (
+                <>
+                  <div className={"goods_img"}>
+                    <figure>
+                      <img
+                        src={value?.img_url}
+                        alt={value?.goodsName}
+                        onClick={() => {
+                          router.push({
+                            pathname: "/goods/one/value",
+                            query: value,
+                          });
+                        }}
+                      />
+                      <div className={"custom"}>{value?.IsCustom}</div>
+                      <div className={"soldout"}>{value?.IsSoldout}</div>
+                    </figure>
+                    <figure>
+                      <div>
+                        <p>
+                          <button>좋아요</button>
+                        </p>
+                        <p>{value?.goodsName}</p>
+                      </div>
+                      <p>{value?.price}원</p>
+                    </figure>
+                  </div>
+                </>
+              );
+            })}
+            {sunglassBest.map((value) => {
+              return (
+                <>
+                  <div className={"goods_img"}>
+                    <figure>
+                      <img
+                        src={value?.img_url}
+                        alt={value?.goodsName}
+                        onClick={() => {
+                          router.push({
+                            pathname: "/goods/one/value",
+                            query: value,
+                          });
+                        }}
+                      />
+                      <div className={"custom"}>{value?.IsCustom}</div>
+                      <div className={"soldout"}>{value?.IsSoldout}</div>
+                    </figure>
+                    <figure>
+                      <div>
+                        <p>
+                          <button>좋아요</button>
+                        </p>
+                        <p>{value?.goodsName}</p>
+                      </div>
+                      <p>{value?.price}원</p>
+                    </figure>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </span>
       </GoodsSS>
     </Layout>
   );

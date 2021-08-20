@@ -4,9 +4,9 @@ import { GoodsSS } from "../goods.style";
 
 import { useRouter } from "next/router";
 
-const GlassPage = (): JSX.Element => {
+const SunglassPage = (): JSX.Element => {
   const router = useRouter();
-  const [glass, glassList] = useState([]);
+  const [sunglass, sunglassList] = useState([]);
   const menu = [
     ["모두"],
     ["custom", "non-custom"],
@@ -33,6 +33,7 @@ const GlassPage = (): JSX.Element => {
       "오버사이즈",
       "보잉",
       "클립온",
+      "틴트",
       "스포츠",
     ],
     [
@@ -62,7 +63,7 @@ const GlassPage = (): JSX.Element => {
   const menus = [[], [], [], [], [], [], [], []];
   const All = (name: any) => {
     var value;
-    axios.get("https://strapi.kspark.link/glasses").then((res) => {
+    axios.get("https://strapi.kspark.link/sunglasses").then((res) => {
       //모두
       const all = res.data;
       if (name === "all") value = all;
@@ -134,14 +135,14 @@ const GlassPage = (): JSX.Element => {
         if (name === str) value = menus[7][index];
       });
 
-      glassList(value);
+      sunglassList(value);
     });
   };
 
   return (
     <GoodsSS>
       <span>
-        <div className={"title"}>GLASS</div>
+        <div className={"title"}>SUNGLASS</div>
       </span>
       <div className={"name"} onClick={() => All("all")}>
         <span>All</span>
@@ -238,7 +239,7 @@ const GlassPage = (): JSX.Element => {
 
       <span>
         <div className={"goods"}>
-          {glass.map((value) => {
+          {sunglass.map((value) => {
             return (
               <>
                 <div className={"goods_img"}>
@@ -261,9 +262,12 @@ const GlassPage = (): JSX.Element => {
                       <p>
                         <button>좋아요</button>
                       </p>
+
                       <p>{value?.goodsName}</p>
                     </div>
-                    <p>{value?.price}원</p>
+                    <div>
+                      <p>{value?.price}원</p>
+                    </div>
                   </figure>
                 </div>
               </>
@@ -275,4 +279,4 @@ const GlassPage = (): JSX.Element => {
   );
 };
 
-export default GlassPage;
+export default SunglassPage;
