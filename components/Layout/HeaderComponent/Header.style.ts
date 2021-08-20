@@ -7,6 +7,9 @@ export const HeaderSS = styled.div<{ isLoggedIn: boolean }>`
   min-width: 1100px;
   position: fixed;
   background-color: white;
+  border-bottom: 1px double rgb(0 0 0 / 30%);
+  border-radius: 50px;
+
   left: 0;
   right: 0;
   top: 0;
